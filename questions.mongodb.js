@@ -1,6 +1,9 @@
-show('dbs')
-use('shopApp')
+use('ecommerce')
+db.createCollection('products')
 
-db.createCollection('users')
-
-db.users.find({name: 'Rahul'})
+db.products.updateMany(
+    {category: 'Electronics'},
+    {$inc: {
+        price: 10
+    }}
+)
